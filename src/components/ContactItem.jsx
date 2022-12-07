@@ -5,5 +5,3 @@ export const ContactItem = ({ contactItem }) => {
     </li>
   );
 };
-
-// key={contactItem.id}

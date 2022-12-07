@@ -13,6 +13,11 @@ export class App extends Component {
     ],
     filter: '',
   };
+
+  addNewContact = ({ name, number }) => {
+    
+  };
+
   render() {
     return (
       <div
@@ -25,14 +30,12 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        
-          <h1>Phonebook</h1>
-          <ContactForm />
+        <h1>Phonebook</h1>
+        <ContactForm newContact={this.addNewContact} />
 
-          <h2>Contacts</h2>
-          {/* <Filter /> */}
-          <ContactList contacts={this.state.contacts} />
-        
+        <h2>Contacts</h2>
+        {/* <Filter /> */}
+        <ContactList contacts={this.state.contacts} />
       </div>
     );
   }
