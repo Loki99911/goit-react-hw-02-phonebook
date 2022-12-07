@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import { Filter } from './Filter';
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList ';
+import { nanoid } from 'nanoid';
 
 export class App extends Component {
   state = {
@@ -15,7 +16,10 @@ export class App extends Component {
   };
 
   addNewContact = ({ name, number }) => {
-    
+    const contact = { id: nanoid(), name, number };
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+    }));
   };
 
   render() {
