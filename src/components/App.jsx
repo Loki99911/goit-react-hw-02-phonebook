@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Filter } from './Filter';
+import { Filter } from './Filter';
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList ';
 import { nanoid } from 'nanoid';
@@ -22,6 +22,10 @@ export class App extends Component {
     }));
   };
 
+  filterContact = (event) => {
+    this.setState({filter: event.currentTarget.value});
+  };
+
   render() {
     return (
       <div
@@ -38,7 +42,7 @@ export class App extends Component {
         <ContactForm newContact={this.addNewContact} />
 
         <h2>Contacts</h2>
-        {/* <Filter /> */}
+        <Filter filterInput={this.state.filter} onChange={this.filterContact}/>
         <ContactList contacts={this.state.contacts} />
       </div>
     );
