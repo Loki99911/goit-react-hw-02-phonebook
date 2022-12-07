@@ -1,7 +1,9 @@
-export const ContactItem = ({ options, onLeaveFeedback }) => {
+export const ContactItem = ({ contactItem }) => {
   return (
-      {options.map(option => {
-        return (<li>{ option}</li>);
-      })}
+    <li >
+      {contactItem.name}: {contactItem.number}{' '}
+    </li>
   );
 };
+
+// key={contactItem.id}

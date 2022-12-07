@@ -1,10 +1,10 @@
 import { ContactItem } from './ContactItem';
 
-export const ContactList = ({ options, onLeaveFeedback }) => {
+export const ContactList = ({ contacts }) => {
   return (
     <ul>
-      {options.map(option => {
-        <ContactItem />;
+      {contacts.map(contact => {
+        return <ContactItem contactItem={contact} key={contact.id} />;
       })}
     </ul>
   );
