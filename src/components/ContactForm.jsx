@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 export class ContactForm extends Component {
   state = {
-    // id: 'id-1',
     name: '',
     number: '',
   };
   handleChange = event => {
-    // console.log(event);
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
   handleSubmit = event => {
     event.preventDefault();
     this.props.newContact(this.state);
+    this.setState({ name: '', number: '' });
   };
 
   render() {
