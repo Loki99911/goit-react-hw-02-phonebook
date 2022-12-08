@@ -12,4 +12,8 @@ export const ItemBtn = styled.button`
   border-radius: 5px;
   border: 2px solid #000000;
   margin-left: auto;
+  :hover{
+    color:red;
+    border-color:red;
+  }
 `;

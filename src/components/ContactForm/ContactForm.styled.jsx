@@ -4,7 +4,7 @@ export const FormBlock = styled.form`
   display: flex;
   flex-direction: column;
   width: 30%;
-  margin-top:30px;
+  margin-top: 30px;
 `;
 
 export const FormTitle = styled.label`
@@ -26,4 +26,9 @@ export const FormBtn = styled.button`
   border: 2px solid #000000;
   margin: 0 auto;
   margin-top: 15px;
+  margin-bottom: 30px;
+  :hover {
+    color: green;
+    border-color: green;
+  }
 `;
