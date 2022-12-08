@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
-export const ItemBlock = styled.li``;
+export const ItemBlock = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-export const ItemBtn = styled.button``;
+export const ItemBtn = styled.button`
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid #000000;
+  margin-left: auto;
+`;
