@@ -47,17 +47,18 @@ export class App extends Component {
       <div
         style={{
           // height: '100vh',
-          // display: 'flex',
-          // justifyContent: 'center',
-          // alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
           fontSize: 40,
           color: '#010101',
         }}
       >
-        <h1>Phonebook</h1>
+        <h1 style={{ margin: 0, padding: 0 }}>Phonebook</h1>
         <ContactForm newContact={this.addNewContact} />
 
-        <h2>Contacts</h2>
+        <h2 style={{ margin: 0, padding: 0 }}>Contacts</h2>
         <Filter filterInput={this.state.filter} onChange={this.filterInput} />
         <ContactList
           contacts={this.filterContact()}
