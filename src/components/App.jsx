@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Filter } from './Filter';
-import { ContactForm } from './ContactForm';
-import { ContactList } from './ContactList ';
+import { Filter } from './Filter/Filter';
+import { ContactForm } from './ContactForm/ContactForm';
+import { ContactList } from './ContactList/ContactList ';
 import { nanoid } from 'nanoid';
 
 export class App extends Component {
@@ -16,7 +16,7 @@ export class App extends Component {
   };
 
   addNewContact = ({ name, number }) => {
-    if (this.state.contacts.find(contact => contact.name===name)) {
+    if (this.state.contacts.find(contact => contact.name === name)) {
       return alert(`${name} is already in contacts!`);
     }
 
