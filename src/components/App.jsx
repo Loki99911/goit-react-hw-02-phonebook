@@ -16,14 +16,31 @@ export class App extends Component {
   };
 
   addNewContact = ({ name, number }) => {
+    if (this.state.contacts.find(contact => contact.name)) {
+      return alert('ASSS');
+    }
+
     const contact = { id: nanoid(), name, number };
     this.setState(({ contacts }) => ({
       contacts: [contact, ...contacts],
     }));
   };
 
-  filterContact = (event) => {
-    this.setState({filter: event.currentTarget.value});
+  deleteContact = id => {
+    console.log(id);
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  };
+
+  filterInput = event => {
+    this.setState({ filter: event.currentTarget.value });
+  };
+
+  filterContact = () => {
+    return this.state.contacts.filter(contact =>
+      contact.name.includes(this.state.filter)
+    );
   };
 
   render() {
@@ -42,8 +59,11 @@ export class App extends Component {
         <ContactForm newContact={this.addNewContact} />
 
         <h2>Contacts</h2>
-        <Filter filterInput={this.state.filter} onChange={this.filterContact}/>
-        <ContactList contacts={this.state.contacts} />
+        <Filter filterInput={this.state.filter} onChange={this.filterInput} />
+        <ContactList
+          contacts={this.filterContact()}
+          onClick={this.deleteContact}
+        />
       </div>
     );
   }

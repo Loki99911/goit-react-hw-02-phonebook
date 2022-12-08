@@ -1,11 +1,18 @@
 import { ContactItem } from './ContactItem';
 
 
-export const ContactList = ({ contacts }) => {
+export const ContactList = ({ contacts, onClick }) => {
   return (
     <ul>
       {contacts.map(contact => {
-        return <ContactItem contactItem={contact} key={contact.id} />;
+        const { id } = contact
+        return (
+          <ContactItem
+            key={id}
+            contactItem={contact}
+            onClick={()=>onClick(id)}
+          />
+        );
       })}
     </ul>
   );
