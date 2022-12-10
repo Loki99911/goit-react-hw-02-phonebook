@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { ItemBlock, ItemBtn } from './ContactItem.styled';
 
 export const ContactItem = ({ contactItem, onClick }) => {
@@ -10,4 +10,9 @@ export const ContactItem = ({ contactItem, onClick }) => {
       </ItemBtn>
     </ItemBlock>
   );
+};
+
+ContactItem.propTypes = {
+  contactItem: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

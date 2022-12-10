@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { ContactItem } from '../ContactItem/ContactItem';
 import { ListBlock} from './ContactList.styled';
 export const ContactList = ({ contacts, onClick }) => {
@@ -16,4 +16,9 @@ export const ContactList = ({ contacts, onClick }) => {
       })}
     </ListBlock>
   );
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

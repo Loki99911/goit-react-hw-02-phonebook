@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { FormBlock, FormTitle, FormInput, FormBtn } from './ContactForm.styled';
 
 export class ContactForm extends Component {
@@ -7,10 +7,12 @@ export class ContactForm extends Component {
     name: '',
     number: '',
   };
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+
   handleSubmit = event => {
     event.preventDefault();
     this.props.newContact(this.state);
@@ -50,3 +52,7 @@ export class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  newContact: PropTypes.func.isRequired,
+};
