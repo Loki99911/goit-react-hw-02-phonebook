@@ -6,6 +6,7 @@ export const FilterTitle = styled.label`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  margin-top: 30px;
 `;
 
 export const FilterInput = styled.input`

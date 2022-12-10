@@ -4,6 +4,7 @@ export const ItemBlock = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 `;
 
 export const ItemBtn = styled.button`
